@@ -1,8 +1,11 @@
 = link_to 'Створити оголошення', new_advert_path
 %br
 - @adverts.each do |advert|
+ %br
  = advert.title
  = advert.body
- = link_to 'детальніше', advert_path(advert)
- = link_to 'редагувати', edit_advert_path(advert)
- %br
+ = advert.user.email
+ - if user_signed_in? && advert.user.email == current_user.email
+  = link_to 'детальніше', advert_path(advert)
+  = link_to 'редагувати', edit_advert_path(advert)
+  %br
