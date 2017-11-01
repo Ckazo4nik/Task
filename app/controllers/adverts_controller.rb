@@ -1,5 +1,6 @@
 class AdvertsController < ApplicationController
   before_action :advert , only: [:show, :edit, :destroy, :update]
+  before_action :authenticate_user!, only: [:new]
 
   def index
     respond_with (@adverts = Advert.all)
@@ -17,6 +18,7 @@ class AdvertsController < ApplicationController
     respond_with @advert
   end
   def update
+    @advert.update(set_params)
     respond_with @advert
   end
   def destroy
