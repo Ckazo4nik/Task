@@ -22,7 +22,7 @@ class AdvertsController < ApplicationController
     respond_with @advert
   end
   def destroy
-    respond_with @advert
+    respond_with @advert.destroy
   end
   private
   def advert
