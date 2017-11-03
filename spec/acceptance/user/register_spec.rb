@@ -8,6 +8,7 @@ feature 'Реєстрація нового користувача', %q{
   scenario 'Реєстрація валідного користувача' do
     visit root_path
     click_on 'Login'
+    fill_in 'Username', with: 'username'
     fill_in 'Ваш емейл', with: 'User@test.com'
     fill_in 'Ваш пароль', with: '12345678'
     fill_in 'Підтвердіть пароль', with: '12345678'

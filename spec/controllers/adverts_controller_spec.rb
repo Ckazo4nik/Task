@@ -1,4 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe AdvertsController, type: :controller do
-end
+#RSpec.describe AdvertsController, type: :controller do
+#end

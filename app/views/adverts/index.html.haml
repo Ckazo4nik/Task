@@ -5,6 +5,7 @@
  = advert.title
  = advert.body
  = advert.user.email
+ = advert.user.username
  - if user_signed_in? && advert.user.email == current_user.email
   = link_to 'детальніше', advert_path(advert)
   = link_to 'редагувати', edit_advert_path(advert)
