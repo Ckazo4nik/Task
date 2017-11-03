@@ -1,0 +1,10 @@
+%br
+= advert.title
+= advert.body
+= advert.user.email
+= link_to "#{advert.user.username}", user_path(advert.user.id)
+- if user_signed_in? && advert.user.email == current_user.email
+  = link_to 'детальніше', advert_path(advert)
+  = link_to 'редагувати', edit_advert_path(advert)
+  = link_to 'видалити', advert_path(advert), method: :delete, data: {confirm: "Are you sure?"}
+%br

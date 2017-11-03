@@ -8,7 +8,7 @@ FactoryBot.define do
   factory :user do
     username
     email
-    full_name 'lalala'
+    full_name 'Юзер Нейм'
     city 'Lviv'
     state 'Lviv'
     country 'Ukraine'
