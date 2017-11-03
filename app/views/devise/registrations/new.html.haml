@@ -16,7 +16,7 @@
   .field
     = f.label :birthday, "День народження"
     %br/
-    = f.date_select(:birthday, start_year: 1940, end_year: Date.today.year)
+    = f.date_select(:birthday, order: [:day, :month, :year], start_year: 1940, end_year: Date.today.year)
   .field
     = f.label :country, "Країна"
     %br/
