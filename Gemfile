@@ -66,3 +66,6 @@ gem "haml-rails", "~> 1.0"
 gem "responders"
 gem 'devise'
 gem "dynamic_form"
+
+gem 'bootstrap-sass'
+gem 'jquery-rails'

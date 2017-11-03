@@ -1,4 +1,3 @@
-!!!
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
@@ -7,17 +6,15 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.notice= notice
-    %p.alert= alert
-    - if user_signed_in?
-      = link_to 'sign_out',  destroy_user_session_path, method: :delete
-      Ласкаво просимо
-      = current_user.username
-      = link_to 'Редагувати профіль', edit_user_registration_path
-      = link_to 'Мій профіль', user_path(current_user.id)
-      = link_to 'Всі користувачі', users_path
-    - else
-      = link_to 'sign_in',  new_user_session_path
-      = link_to 'Login',  new_user_registration_path
-      Гість
-    = yield
+
+    .container
+      = render 'shared/header'
+      %p.notice= notice
+      %p.alert= alert
+      - if user_signed_in?
+        %b Ласкаво просимо
+        %strong= current_user.username
+      - else
+        %h3 Гість
+      = yield
+      = render 'shared/footer'

@@ -1,0 +1,56 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"} Task
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav
+        %li.active
+          %a{:href => "#{root_path}"} Головна
+        -#%li
+        -#  %a{:href => "#"} Ссылка
+        -#%li.dropdown
+        -#  %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+        -#    Dropdown
+        -#    %b.caret
+        -#  %ul.dropdown-menu
+        -#    %li
+        -#      %a{:href => "#"} Действие
+        -#    %li
+        -#      %a{:href => "#"} Другое действие
+        -#    %li
+        -#      %a{:href => "#"} Что-то еще
+        -#    %li.divider
+        -#    %li
+        -#      %a{:href => "#"} Отдельная ссылка
+        -#    %li.divider
+        -#    %li
+        -#      %a{:href => "#"} Еще одна отдельная ссылка
+      %ul.nav.navbar-nav.navbar-right
+        -#%li
+        -#  %a{:href => "#"} Ссылка
+        - if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Меню
+              %b.caret
+              %ul.dropdown-menu
+                %li
+                  = link_to 'Редагувати профіль', edit_user_registration_path
+                %li
+                  = link_to 'Всі користувачі', users_path
+                %li.divider
+                  %li
+                    = link_to 'Вихід',  destroy_user_session_path, method: :delete
+        - else
+          %li
+            = link_to 'Увійти',  new_user_session_path
+          %li
+            = link_to 'Зареєструватись',  new_user_registration_path
+
