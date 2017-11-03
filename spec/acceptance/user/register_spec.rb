@@ -9,6 +9,12 @@ feature 'Реєстрація нового користувача', %q{
     visit root_path
     click_on 'Login'
     fill_in 'Username', with: 'username'
+    fill_in 'Повне ім/`я', with: 'Орест Костюк'
+    fill_in 'День народження', with: '11.03.12'
+    fill_in 'Адреса', with: 'вул Михайлюка'
+    fill_in 'Місто', with: 'Львів'
+    fill_in 'Штат', with: 'Арізона'
+    fill_in 'Країна', with: 'Україна'
     fill_in 'Ваш емейл', with: 'User@test.com'
     fill_in 'Ваш пароль', with: '12345678'
     fill_in 'Підтвердіть пароль', with: '12345678'
