@@ -8,7 +8,7 @@ feature 'Логін користувача', %q{
     given(:user) { create(:user) }
     scenario 'Не зареєстрований користувач, невірні дані' do
       visit root_path
-      click_on 'sign_in'
+      click_on 'Увійти'
       fill_in 'Email', with: 'wrong228@login'
       fill_in 'Password', with: '12345678'
       click_on 'Log in'

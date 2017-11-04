@@ -30,6 +30,6 @@ feature 'Create Advert' , %q{
     visit root_path
     click_on 'Створити оголошення'
 
-    expect(page).to have_content 'sign_in Login'
+    expect(page).to have_content 'You need to sign in or sign up before continuing.'
   end
 end

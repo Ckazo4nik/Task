@@ -45,6 +45,8 @@
                   = link_to 'Редагувати профіль', edit_user_registration_path
                 %li
                   = link_to 'Всі користувачі', users_path
+                %li
+                  = link_to 'Мій профіль', user_path(current_user.id)
                 %li.divider
                   %li
                     = link_to 'Вихід',  destroy_user_session_path, method: :delete
@@ -52,5 +54,5 @@
           %li
             = link_to 'Увійти',  new_user_session_path
           %li
-            = link_to 'Зареєструватись',  new_user_registration_path
+            = link_to 'Login',  new_user_registration_path
 

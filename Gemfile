@@ -54,6 +54,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem "factory_bot_rails", "~> 4.0"
   gem 'launchy'
+  gem 'rails-controller-testing'
 end
 
 group :test do
