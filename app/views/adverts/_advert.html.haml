@@ -1,7 +1,7 @@
 %br
 = advert.title
 = advert.body
-= advert.user.email
+= advert.user.email if advert.user.email.present?
 = link_to "#{advert.user.username}", user_path(advert.user.id)
 - if user_signed_in? && advert.user.email == current_user.email
   = link_to 'детальніше', advert_path(advert)

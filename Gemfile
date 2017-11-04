@@ -70,3 +70,6 @@ gem "dynamic_form"
 
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+
+gem 'omniauth'
+gem 'omniauth-facebook'
