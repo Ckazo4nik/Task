@@ -9,6 +9,7 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of  :state }
   it { should validate_presence_of  :country }
   it { should validate_presence_of  :full_name }
+  it { should have_many :comments }
 
   describe '.find_for_oauth' do
     let!(:user) { create(:user) }

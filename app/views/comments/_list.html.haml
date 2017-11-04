@@ -1,0 +1,5 @@
+= render @advert.comments
+= form_for [@advert, @advert.comments.create], remote: true do |f|
+    = f.label :body, 'Ваш коментар'
+    = f.text_area :body
+    = f.submit 'Додати'

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   has_many :adverts
   has_many :authorizations
+  has_many :comments
 
   def self.find_for_oauth(auth)
     authorization = Authorization.where(provider: auth.provider, uid: auth.uid.to_s).first

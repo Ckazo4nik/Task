@@ -1,5 +1,10 @@
-%h1 Оголошення
-= @advert.title
-= @advert.body
-= @advert.user.email
-= link_to 'Назад', adverts_path
+.advert
+    %h1 Оголошення
+    = @advert.title
+    = @advert.body
+    = @advert.user.email
+    .comments
+        =render 'comments/list'
+
+
+    = link_to 'Назад', adverts_path
