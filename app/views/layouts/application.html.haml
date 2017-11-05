@@ -14,6 +14,8 @@
       - if user_signed_in?
         %b Ласкаво просимо
         %strong= current_user.username
+        - if current_user.admin?
+          admin
       - else
         %h3 Гість
       = yield

@@ -74,3 +74,5 @@ gem 'remotipart', github: 'pedantix/remotipart', ref: '7f7989db572976816c03508c3
 
 gem 'omniauth'
 gem 'omniauth-facebook'
+
+gem 'cancancan'
