@@ -16,6 +16,8 @@
         %strong= current_user.username
         - if current_user.admin?
           admin
+        -elsif current_user.moderator?
+          moderator
       - else
         %h3 Гість
       = yield

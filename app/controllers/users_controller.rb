@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+authorize_resource
+
   def index
     respond_with @users = User.all
   end
