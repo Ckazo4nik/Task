@@ -8,11 +8,11 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-        @comment = Comment.find(params[:id])
-        @comment.destroy
-        respond_with @comment
-    end
 
+      @comment = Comment.find(params[:id])
+      @advert = @comment.advert
+      respond_with(@comment.destroy, location: -> {@advert})
+    end
 
     private
 

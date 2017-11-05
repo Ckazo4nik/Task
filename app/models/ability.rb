@@ -23,7 +23,7 @@ class Ability
     guest_abilities
     can :create, [Advert, Comment]
     can :update, [Advert],  user: user
-    can :destroy, [Advert], user: user
+    can :destroy, [Advert, Comment], user: user
 
   end
 end
