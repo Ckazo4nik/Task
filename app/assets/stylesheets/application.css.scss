@@ -15,6 +15,7 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "adverts";
 
 body {
   background: rgba(48, 48, 16, 0.29);
@@ -29,4 +30,7 @@ a {
 .footer {
   text-align: center;
   margin-top: 40vh;
+}
+.hello {
+    text-align: center;
 }

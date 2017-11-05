@@ -11,14 +11,15 @@
       = render 'shared/header'
       %p.notice= notice
       %p.alert= alert
-      - if user_signed_in?
-        %b Ласкаво просимо
-        %strong= current_user.username
-        - if current_user.admin?
-          admin
-        -elsif current_user.moderator?
-          moderator
-      - else
-        %h3 Гість
+      .hello
+        - if user_signed_in?
+          %h3 Ласкаво просимо
+          %h2= current_user.username
+          - if current_user.admin?
+            %b admin
+          -elsif current_user.moderator?
+            %b moderator
+        - else
+          %h3 Гість
       = yield
       = render 'shared/footer'

@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.4.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -76,3 +77,5 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 
 gem 'cancancan'
+
+gem 'rails_12factor'
