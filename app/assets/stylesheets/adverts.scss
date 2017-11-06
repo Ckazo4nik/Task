@@ -7,14 +7,20 @@
 .users {
     font-size: 20px;
 }
-.editor {
+#advert_body {
     min-height: 200px;
     background: wheat;
+    width: 50%;
 }
 #advert_summary {
     min-height: 100px;
     background: wheat;
-    width: 100%;
+    width: 50%;
+}
+#advert_title {
+    min-height: 50px;
+    background: wheat;
+    width: 50%;
 }
 .trix-content {
     min-height: 200px;
