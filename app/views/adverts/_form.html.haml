@@ -1,11 +1,16 @@
 =form_for @advert , html: { multipart: true }do |f|
   = f.error_messages
-  = f.label :title
+  = f.label :title , 'Заголовок'
+  %br
   = f.text_field :title
   %br
+  = f.label :summary , 'Короткий опис'
   %br
-  = f.label :body
-  = f.text_area :body
+  .summary= f.text_area :summary
+  %br
+  %br
+  = f.label :body, 'Текст'
+  .editor= f.text_area :body
   = f.file_field :image
 
   .submit-create-question= f.submit  'Створити'

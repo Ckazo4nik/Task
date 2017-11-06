@@ -20,7 +20,7 @@ class User < ApplicationRecord
       user.create_authorization(auth)
     else
       password = Devise.friendly_token[0, 20]
-      user = User.create!(email: email, password: password, password_confirmation: password, full_name: auth.info[:name], username: email, city: none, state: none, country: none,birthday: auth.info[:age_range])
+      user = User.create!(email: email, password: password, password_confirmation: password, full_name: auth.info[:name], username: email.match(/[a-z]*\@/)[0][0..-2], city: none, state: none, country: none,birthday: auth.info[:age_range])
       user.create_authorization(auth)
     end
     user

@@ -14,8 +14,9 @@ feature 'Редагування оголошення', %q{
     sign_in(user)
     visit root_path
     click_on 'редагувати'
-    fill_in 'Title', with: 'Text2'
-    fill_in 'Body', with: 'Text2'
+    fill_in 'Заголовок', with: 'Text2'
+    fill_in 'Короткий опис', with: 'Text2'
+    fill_in 'Текст', with: 'Ogolosh2'
     click_on 'Створити'
     expect(page).to have_content 'Advert was successfully updated'
   end
@@ -23,8 +24,9 @@ feature 'Редагування оголошення', %q{
     sign_in(user)
     visit root_path
     click_on 'редагувати'
-    fill_in 'Title', with: nil
-    fill_in 'Body', with: 'Text2'
+    fill_in 'Заголовок', with: nil
+    fill_in 'Короткий опис', with: 'Text2'
+    fill_in 'Текст', with: 'Ogolosh3'
     click_on 'Створити'
 
     expect(page).to have_content 'be blank'

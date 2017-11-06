@@ -32,6 +32,6 @@ class AdvertsController < ApplicationController
     @advert = Advert.find(params[:id])
   end
   def set_params
-    params.require(:advert).permit(:title, :body, :user_id, :image)
+    params.require(:advert).permit(:title, :body, :user_id, :image, :summary)
   end
 end

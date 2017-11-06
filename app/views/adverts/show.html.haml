@@ -1,7 +1,7 @@
 .advert
     %h1 Оголошення
     = @advert.title
-    = @advert.body
+    = markdown(@advert.body)
     = @advert.user.email
     = image_tag @advert.image.url(:large) if @advert.image?
     .comments

@@ -10,8 +10,9 @@ feature 'Create Advert' , %q{
     sign_in(user)
     visit root_path
     click_on 'Створити оголошення'
-    fill_in 'Title', with: 'Ogolosh'
-    fill_in 'Body', with: 'Ogolosh2'
+    fill_in 'Заголовок', with: 'Ogolosh'
+    fill_in 'Короткий опис', with: 'Ogolosh2'
+    fill_in 'Текст', with: 'Ogolosh2'
     click_on 'Створити'
 
     expect(page).to have_content 'Advert was successfully created'
@@ -20,8 +21,9 @@ feature 'Create Advert' , %q{
     sign_in(user)
     visit root_path
     click_on 'Створити оголошення'
-    fill_in 'Title', with: ''
-    fill_in 'Body', with: 'Ogolosh2'
+    fill_in 'Заголовок', with: ''
+    fill_in 'Короткий опис', with: 'Ogolosh2'
+        fill_in 'Текст', with: 'Ogolosh2'
     click_on 'Створити'
 
     expect(page).to have_content 'can\'t be blank'

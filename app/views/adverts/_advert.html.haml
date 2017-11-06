@@ -3,7 +3,7 @@
 %strong Заголовок:
 = link_to "#{advert.title}", advert_path(advert)
 %strong Опис:
-= link_to "#{advert.body}", advert_path(advert)
+= link_to "#{advert.summary}", advert_path(advert)
 .info
     = link_to "#{advert.user.full_name}", user_path(advert.user.id)
     - if user_signed_in? &&( advert.user.email == current_user.email or current_user.admin? or current_user.moderator?)
