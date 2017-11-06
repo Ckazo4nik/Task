@@ -9,6 +9,7 @@ feature 'видалення оголошення', %q{
     sign_in(user)
     visit root_path
     click_on 'видалити'
+    save_and_open_page
     expect(page).to_not have_content advert.title
     end
   scenario 'не видно силку видалити' do

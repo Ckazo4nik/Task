@@ -18,7 +18,7 @@ feature 'Перегляд профылю', %q{
   scenario 'Перегляд профіля іншого користувача' do
     sign_in(user2)
     visit root_path
-    click_on user.username
+    click_on user.full_name
 
     expect(page).to have_content "Профіль #{user.username}"
 

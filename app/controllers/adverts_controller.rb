@@ -13,7 +13,8 @@ class AdvertsController < ApplicationController
     respond_with (@advert = Advert.new)
   end
   def create
-    respond_with @advert = current_user.adverts.create(set_params)
+    @advert = current_user.adverts.create(set_params)
+    respond_with @advert
   end
   def show
     respond_with @advert
@@ -31,6 +32,6 @@ class AdvertsController < ApplicationController
     @advert = Advert.find(params[:id])
   end
   def set_params
-    params.require(:advert).permit(:title, :body, :user_id)
+    params.require(:advert).permit(:title, :body, :user_id, :image)
   end
 end

@@ -3,6 +3,7 @@
     = @advert.title
     = @advert.body
     = @advert.user.email
+    = image_tag @advert.image.url(:large) if @advert.image?
     .comments
         =render 'comments/list'
 
