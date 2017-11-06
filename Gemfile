@@ -85,3 +85,6 @@ gem "mini_magick"
 gem 'trix'
 
 gem "redcarpet"
+
+gem 'geocoder'
+gem 'gmaps4rails'

@@ -3,3 +3,24 @@
 %br
 
 = render @users
+
+#map
+
+:javascript
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers([
+        {
+          "lat": 0,
+          "lng": 0,
+          "picture": {
+            "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY8EpQJx0xB9kqZGmlUkK2-np56aS37qH4zKPHBVoBgow_XLSYq1AH1u-G",
+            "width":  32,
+            "height": 32
+          },
+          "infowindow": "hello!"
+        }
+      ]);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });

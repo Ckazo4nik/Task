@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :adverts
   has_many :authorizations
   has_many :comments
+  geocoded_by :full_street_address
+  after_validation :geocode
 
   def self.find_for_oauth(auth)
     authorization = Authorization.where(provider: auth.provider, uid: auth.uid.to_s).first
@@ -28,5 +30,10 @@ class User < ApplicationRecord
 
   def create_authorization(auth)
     self.authorizations.create(provider: auth.provider, uid: auth.uid)
+  end
+
+  def full_street_address
+   user = User.last
+    street = "#{user.country} #{user.state} #{user.city} #{user.address}"
   end
 end

@@ -2,6 +2,8 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %title Task
+    %script{:src  => "//maps.google.com/maps/api/js?key=AIzaSyCSu1tPGn9Xl8gsrguM2hBMCdfbz2DL8aw"}
+    %script{:src  => "//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"}
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
