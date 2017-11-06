@@ -5,8 +5,8 @@
     = @advert.user.email
     = image_tag @advert.image.url(:large) if @advert.image?
     - if user_signed_in? &&( @advert.user.email == current_user.email or current_user.admin? or current_user.moderator?)
-        = link_to 'редагувати', edit_advert_path(advert)
-        = link_to 'видалити', advert_path(advert), method: :delete, data: {confirm: "Are you sure?"}
+        = link_to 'редагувати', edit_advert_path(@advert)
+        = link_to 'видалити', advert_path(@advert), method: :delete, data: {confirm: "Are you sure?"}
     .comments
         =render 'comments/list'
 
