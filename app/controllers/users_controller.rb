@@ -2,9 +2,20 @@ class UsersController < ApplicationController
 authorize_resource
 
   def index
-    respond_with @users = User.all
+    @users = User.all
+    @hash = Gmaps4rails.build_markers(@users) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
+    respond_with @users
   end
   def show
-    respond_with @user = User.find(params[:id])
+    @user = User.find(params[:id])
+
+    @one = Gmaps4rails.build_markers(@user) do |user, marker|
+      marker.lat user.latitude
+      marker.lng user.longitude
+    end
+    respond_with @user
   end
 end
