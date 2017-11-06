@@ -82,5 +82,6 @@ gem 'rails_12factor'
 
 gem 'carrierwave', '~> 1.0'
 gem "mini_magick"
+gem 'trix'
 
 gem "redcarpet"
