@@ -15,5 +15,3 @@
 
   .submit-create-question= f.submit  'Створити'
   = link_to 'Назад', root_path
-- if user_signed_in? &&(@advert.user.email == current_user.email or current_user.admin? or current_user.moderator?)
-  = link_to 'видалити', advert_path(@advert), method: :delete, data: {confirm: "Are you sure?"}
