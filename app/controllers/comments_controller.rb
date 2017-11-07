@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
     respond_to :js
-  authorize_resource
+    authorize_resource
 
     def create
         @advert = Advert.find(params[:advert_id])
@@ -11,12 +11,12 @@ class CommentsController < ApplicationController
 
       @comment = Comment.find(params[:id])
       @advert = @comment.advert
-      respond_with(@comment.destroy, location: -> {@advert})
+      respond_with(@comment.destroy)
     end
 
     private
 
       def set_params
-    params.require(:comment).permit(:body, :advert_id,:user_id)
-  end
+        params.require(:comment).permit(:body, :advert_id,:user_id)
+      end
 end

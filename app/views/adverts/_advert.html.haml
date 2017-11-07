@@ -1,5 +1,5 @@
 %br
-= image_tag advert.image.url(:thumb) if advert.image?
+.img-thumb= image_tag advert.image.url(:thumb) if advert.image?
 %strong Заголовок:
 = link_to "#{advert.title}", advert_path(advert)
 %strong Опис:
