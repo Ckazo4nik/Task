@@ -30,6 +30,6 @@ authorize_resource
   private
 
   def set_params
-    params.require(:user).permit(:moderator)
+    params.require(:user).permit(:full_name,:moderator, :city, :country, :state, :address)
   end
 end
