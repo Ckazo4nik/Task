@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :authorizations
   has_many :comments
   geocoded_by :full_street_address
-  after_save :geocode
+  after_create :geocode
 
   def self.find_for_oauth(auth)
     authorization = Authorization.where(provider: auth.provider, uid: auth.uid.to_s).first
