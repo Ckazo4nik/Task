@@ -21,9 +21,9 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit( :sign_in , keys: [:longitude, :latitude, :full_name, :username, :birthday, :address, :city, :state, :country ] )
-    devise_parameter_sanitizer.permit( :sign_up , keys: [:longitude, :latitude, :full_name ,:username, :birthday, :address, :city, :state, :country ] )
-    devise_parameter_sanitizer.permit( :account_update , keys: [:year, :full_name, :birthday, :address, :city, :state, :country ] )
+    devise_parameter_sanitizer.permit( :sign_in , keys: [:moderator, :longitude, :latitude, :full_name, :username, :birthday, :address, :city, :state, :country ] )
+    devise_parameter_sanitizer.permit( :sign_up , keys: [:moderator, :longitude, :latitude, :full_name ,:username, :birthday, :address, :city, :state, :country ] )
+    devise_parameter_sanitizer.permit( :account_update , keys: [:year, :full_name, :birthday, :address, :city, :state, :country, :moderator] )
   end
 
 

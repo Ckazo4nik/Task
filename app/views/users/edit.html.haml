@@ -1,0 +1,7 @@
+=form_for @user do |f|
+  = f.error_messages
+  = f.label :moderator , 'Заголовок'
+  %br
+  = f.text_field :moderator
+  .submit-create-question= f.submit  'Створити'
+  = link_to 'Назад', root_path

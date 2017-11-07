@@ -1,7 +1,11 @@
 #users-all
+  %b user admin?
+  = user.admin
+  %b user moderator?
+  = user.moderator
   %br
   %h4
-  = user.full_name
+  = link_to "#{user.full_name}", user_path(user.id)
   %strong Емейл користувача
   = user.email
   %br
@@ -25,4 +29,5 @@
   %br
   = user.latitude
   = user.longitude
-
+  - if current_user.admin?
+    = link_to 'Редагувати користувача', edit_user_path(user.id)

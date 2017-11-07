@@ -11,6 +11,9 @@
       Currently waiting confirmation for: #{resource.unconfirmed_email}
 
   .field
+    - if current_user.admin?
+      = f.label :moderator, 'Модератор'
+      = f.text_field :moderator, autofocus: true
     = f.label :full_name, 'Повне ім/`я'
     %br/
     = f.text_field :full_name, autofocus: true
@@ -48,11 +51,6 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
-  .field
-    = f.label :current_password
-    %i (we need your current password to confirm your changes)
-    %br/
-    = f.password_field :current_password, autocomplete: "off"
   .actions
     = f.submit "Update"
 %h3 Cancel my account

@@ -18,4 +18,18 @@ authorize_resource
     end
     respond_with @user
   end
+  def edit
+    @user = User.find(params[:id])
+  end
+  def update
+    @user = User.find(params[:id])
+    @user.update(set_params)
+    respond_with @user
+  end
+
+  private
+
+  def set_params
+    params.require(:user).permit(:moderator)
+  end
 end
