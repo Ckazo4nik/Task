@@ -33,7 +33,7 @@ class User < ApplicationRecord
   end
 
   def full_street_address
-   user = User.last
+   user = User.
     street = "#{user.country} #{user.state} #{user.city} #{user.address}"
   end
 end
