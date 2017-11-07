@@ -10,8 +10,8 @@ feature 'видалення оголошення', %q{
     visit root_path
     click_on 'видалити'
     save_and_open_page
-    expect(page).to_not have_content advert.title
-    end
+    expect{page}.to_not have_content (text "MyText")
+   end
   scenario 'не видно силку видалити' do
     visit root_path
     expect(page).to_not have_content 'видалити'
